@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Indie+Flower&family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="teamInfo">
+      <input id="teamInput" type="text" placeholder="Team name" />
+      <button id="teamSearch" onclick="getPlayers()">Get Players</button>
+    </div>
+    <div id="players"></div>
+    <script id="players-template" type="text/x-handlebars-template">
+      {{#each item}}
+        <div class="player">
+          <div>{{position}}</div>
+          <div class="name-jersey">
+            <span class="jersey">{{jersey}}</span><span
+              class="name"
+            >{{name}}</span>
+          </div>
+          <div class="playerImg"><img src="{{image}}" alt="" /></div>
+        </div>
+      {{/each}}
+    </script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./main.js"></script>
+    <script src="./players.js"></script>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
